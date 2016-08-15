@@ -806,7 +806,7 @@ namespace SocketDemo
         {
             try
             {
-                using (NewOnlineService.OnLineDataServerInterfaceClient tmpclient = new NewOnlineService.OnLineDataServerInterfaceClient())//消息中心
+                using (NewOnlineService.OnLineDataServerInterfaceClient tmpclient = new NewOnlineService.OnLineDataServerInterfaceClient())
                 {
                     NewOnlineService.NullObj no = new NewOnlineService.NullObj();
                     string result = string.Empty;
