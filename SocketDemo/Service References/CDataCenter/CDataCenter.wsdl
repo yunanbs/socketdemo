@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://CDataCenter/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://CDataCenter/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://CDataCenter/">
+      <s:element name="UpReadValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tagName" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpReadValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpReadValueResult" type="tns:ArrayOfUpDataValue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUpDataValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="upDataValue" type="tns:upDataValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="upDataValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="tagName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="tagID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="dataValidate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="deviceTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="valState" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OnlineDataReadValueString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tagNames" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OnlineDataReadValueStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OnlineDataReadValueStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OnlineDataReadValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tagName" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OnlineDataReadValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OnlineDataReadValueResult" type="tns:ArrayOfUpDataValue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpWriteValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="upwritestruct" type="tns:ArrayOfUpWriteStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUpWriteStruct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="upWriteStruct" type="tns:upWriteStruct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="upWriteStruct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="tagName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="val" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dataValidate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="deviceTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpWriteValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpWriteValueResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownReadValueString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="driverNames" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownReadValueStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownReadValueStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownReadValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="driverName" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownReadValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownReadValueResult" type="tns:ArrayOfDownDataValue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDownDataValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="downDataValue" type="tns:downDataValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="downDataValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="driverName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dataNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="val" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="dataValidate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="deviceTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="valState" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DownWriteValueString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="downdatavalues" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownWriteValueStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DownWriteValueStringResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownWriteValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="downdatavalue" type="tns:ArrayOfDownDataValue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownWriteValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DownWriteValueResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDevice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tagNames" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDeviceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddDeviceResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveDevice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tagName" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveDeviceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveDeviceResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Refresh">
+        <s:complexType />
+      </s:element>
+      <s:element name="RefreshResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RefreshResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownGetDeviceInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeviceName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownGetDeviceInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownGetDeviceInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="testdownwritevaluestring">
+        <s:complexType />
+      </s:element>
+      <s:element name="testdownwritevaluestringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="testdownwritevaluestringResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="testupreadvalue">
+        <s:complexType />
+      </s:element>
+      <s:element name="testupreadvalueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="testupreadvalueResult" type="tns:ArrayOfUpDataValue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpReadValueSoapIn">
+    <wsdl:part name="parameters" element="tns:UpReadValue" />
+  </wsdl:message>
+  <wsdl:message name="UpReadValueSoapOut">
+    <wsdl:part name="parameters" element="tns:UpReadValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="OnlineDataReadValueStringSoapIn">
+    <wsdl:part name="parameters" element="tns:OnlineDataReadValueString" />
+  </wsdl:message>
+  <wsdl:message name="OnlineDataReadValueStringSoapOut">
+    <wsdl:part name="parameters" element="tns:OnlineDataReadValueStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="OnlineDataReadValueSoapIn">
+    <wsdl:part name="parameters" element="tns:OnlineDataReadValue" />
+  </wsdl:message>
+  <wsdl:message name="OnlineDataReadValueSoapOut">
+    <wsdl:part name="parameters" element="tns:OnlineDataReadValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpWriteValueSoapIn">
+    <wsdl:part name="parameters" element="tns:UpWriteValue" />
+  </wsdl:message>
+  <wsdl:message name="UpWriteValueSoapOut">
+    <wsdl:part name="parameters" element="tns:UpWriteValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownReadValueStringSoapIn">
+    <wsdl:part name="parameters" element="tns:DownReadValueString" />
+  </wsdl:message>
+  <wsdl:message name="DownReadValueStringSoapOut">
+    <wsdl:part name="parameters" element="tns:DownReadValueStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownReadValueSoapIn">
+    <wsdl:part name="parameters" element="tns:DownReadValue" />
+  </wsdl:message>
+  <wsdl:message name="DownReadValueSoapOut">
+    <wsdl:part name="parameters" element="tns:DownReadValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownWriteValueStringSoapIn">
+    <wsdl:part name="parameters" element="tns:DownWriteValueString" />
+  </wsdl:message>
+  <wsdl:message name="DownWriteValueStringSoapOut">
+    <wsdl:part name="parameters" element="tns:DownWriteValueStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownWriteValueSoapIn">
+    <wsdl:part name="parameters" element="tns:DownWriteValue" />
+  </wsdl:message>
+  <wsdl:message name="DownWriteValueSoapOut">
+    <wsdl:part name="parameters" element="tns:DownWriteValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDeviceSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDevice" />
+  </wsdl:message>
+  <wsdl:message name="AddDeviceSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveDeviceSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveDevice" />
+  </wsdl:message>
+  <wsdl:message name="RemoveDeviceSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="RefreshSoapIn">
+    <wsdl:part name="parameters" element="tns:Refresh" />
+  </wsdl:message>
+  <wsdl:message name="RefreshSoapOut">
+    <wsdl:part name="parameters" element="tns:RefreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownGetDeviceInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:DownGetDeviceInfo" />
+  </wsdl:message>
+  <wsdl:message name="DownGetDeviceInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:DownGetDeviceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="testdownwritevaluestringSoapIn">
+    <wsdl:part name="parameters" element="tns:testdownwritevaluestring" />
+  </wsdl:message>
+  <wsdl:message name="testdownwritevaluestringSoapOut">
+    <wsdl:part name="parameters" element="tns:testdownwritevaluestringResponse" />
+  </wsdl:message>
+  <wsdl:message name="testupreadvalueSoapIn">
+    <wsdl:part name="parameters" element="tns:testupreadvalue" />
+  </wsdl:message>
+  <wsdl:message name="testupreadvalueSoapOut">
+    <wsdl:part name="parameters" element="tns:testupreadvalueResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CDataCenterSoap">
+    <wsdl:operation name="UpReadValue">
+      <wsdl:input message="tns:UpReadValueSoapIn" />
+      <wsdl:output message="tns:UpReadValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OnlineDataReadValueString">
+      <wsdl:input message="tns:OnlineDataReadValueStringSoapIn" />
+      <wsdl:output message="tns:OnlineDataReadValueStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OnlineDataReadValue">
+      <wsdl:input message="tns:OnlineDataReadValueSoapIn" />
+      <wsdl:output message="tns:OnlineDataReadValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpWriteValue">
+      <wsdl:input message="tns:UpWriteValueSoapIn" />
+      <wsdl:output message="tns:UpWriteValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownReadValueString">
+      <wsdl:input message="tns:DownReadValueStringSoapIn" />
+      <wsdl:output message="tns:DownReadValueStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownReadValue">
+      <wsdl:input message="tns:DownReadValueSoapIn" />
+      <wsdl:output message="tns:DownReadValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownWriteValueString">
+      <wsdl:input message="tns:DownWriteValueStringSoapIn" />
+      <wsdl:output message="tns:DownWriteValueStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownWriteValue">
+      <wsdl:input message="tns:DownWriteValueSoapIn" />
+      <wsdl:output message="tns:DownWriteValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDevice">
+      <wsdl:input message="tns:AddDeviceSoapIn" />
+      <wsdl:output message="tns:AddDeviceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDevice">
+      <wsdl:input message="tns:RemoveDeviceSoapIn" />
+      <wsdl:output message="tns:RemoveDeviceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Refresh">
+      <wsdl:input message="tns:RefreshSoapIn" />
+      <wsdl:output message="tns:RefreshSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownGetDeviceInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">返回给下位机指定类型的设备点信息</wsdl:documentation>
+      <wsdl:input message="tns:DownGetDeviceInfoSoapIn" />
+      <wsdl:output message="tns:DownGetDeviceInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="testdownwritevaluestring">
+      <wsdl:input message="tns:testdownwritevaluestringSoapIn" />
+      <wsdl:output message="tns:testdownwritevaluestringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="testupreadvalue">
+      <wsdl:input message="tns:testupreadvalueSoapIn" />
+      <wsdl:output message="tns:testupreadvalueSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CDataCenterSoap" type="tns:CDataCenterSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpReadValue">
+      <soap:operation soapAction="http://CDataCenter/UpReadValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnlineDataReadValueString">
+      <soap:operation soapAction="http://CDataCenter/OnlineDataReadValueString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnlineDataReadValue">
+      <soap:operation soapAction="http://CDataCenter/OnlineDataReadValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpWriteValue">
+      <soap:operation soapAction="http://CDataCenter/UpWriteValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownReadValueString">
+      <soap:operation soapAction="http://CDataCenter/DownReadValueString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownReadValue">
+      <soap:operation soapAction="http://CDataCenter/DownReadValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownWriteValueString">
+      <soap:operation soapAction="http://CDataCenter/DownWriteValueString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownWriteValue">
+      <soap:operation soapAction="http://CDataCenter/DownWriteValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDevice">
+      <soap:operation soapAction="http://CDataCenter/AddDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDevice">
+      <soap:operation soapAction="http://CDataCenter/RemoveDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refresh">
+      <soap:operation soapAction="http://CDataCenter/Refresh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownGetDeviceInfo">
+      <soap:operation soapAction="http://CDataCenter/DownGetDeviceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testdownwritevaluestring">
+      <soap:operation soapAction="http://CDataCenter/testdownwritevaluestring" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testupreadvalue">
+      <soap:operation soapAction="http://CDataCenter/testupreadvalue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CDataCenterSoap12" type="tns:CDataCenterSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpReadValue">
+      <soap12:operation soapAction="http://CDataCenter/UpReadValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnlineDataReadValueString">
+      <soap12:operation soapAction="http://CDataCenter/OnlineDataReadValueString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnlineDataReadValue">
+      <soap12:operation soapAction="http://CDataCenter/OnlineDataReadValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpWriteValue">
+      <soap12:operation soapAction="http://CDataCenter/UpWriteValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownReadValueString">
+      <soap12:operation soapAction="http://CDataCenter/DownReadValueString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownReadValue">
+      <soap12:operation soapAction="http://CDataCenter/DownReadValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownWriteValueString">
+      <soap12:operation soapAction="http://CDataCenter/DownWriteValueString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownWriteValue">
+      <soap12:operation soapAction="http://CDataCenter/DownWriteValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDevice">
+      <soap12:operation soapAction="http://CDataCenter/AddDevice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDevice">
+      <soap12:operation soapAction="http://CDataCenter/RemoveDevice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refresh">
+      <soap12:operation soapAction="http://CDataCenter/Refresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownGetDeviceInfo">
+      <soap12:operation soapAction="http://CDataCenter/DownGetDeviceInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testdownwritevaluestring">
+      <soap12:operation soapAction="http://CDataCenter/testdownwritevaluestring" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testupreadvalue">
+      <soap12:operation soapAction="http://CDataCenter/testupreadvalue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CDataCenter">
+    <wsdl:port name="CDataCenterSoap" binding="tns:CDataCenterSoap">
+      <soap:address location="http://192.168.10.1/CDataCenter/CDataCenter.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CDataCenterSoap12" binding="tns:CDataCenterSoap12">
+      <soap12:address location="http://192.168.10.1/CDataCenter/CDataCenter.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

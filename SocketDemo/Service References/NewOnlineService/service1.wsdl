@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="OnLineDataServiceLib" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/Baosight.DataLib" />
+      <xsd:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/Baosight" />
+      <xsd:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOnLineDataServerInterface_SqlOpration_InputMessage">
+    <wsdl:part name="parameters" element="tns:SqlOpration" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_SqlOpration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SqlOprationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_SqlSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:SqlSearch" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_SqlSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SqlSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_JoinSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:JoinSearch" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_JoinSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:JoinSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_OnlineMonitorObjSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:OnlineMonitorObjSearch" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_OnlineMonitorObjSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OnlineMonitorObjSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_OnlineSiteInfoObjSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:OnlineSiteInfoObjSearch" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_OnlineSiteInfoObjSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OnlineSiteInfoObjSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_OnlineSiteElementInfoObjSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:OnlineSiteElementInfoObjSearch" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_OnlineSiteElementInfoObjSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OnlineSiteElementInfoObjSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_OnlineMonitorObjSearchEx_InputMessage">
+    <wsdl:part name="parameters" element="tns:OnlineMonitorObjSearchEx" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_OnlineMonitorObjSearchEx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OnlineMonitorObjSearchExResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_OnlineMonitorObjDaySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:OnlineMonitorObjDaySearch" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_OnlineMonitorObjDaySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OnlineMonitorObjDaySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_WriteHourAQI_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteHourAQI" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_WriteHourAQI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteHourAQIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_GetHourAQI_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHourAQI" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_GetHourAQI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHourAQIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_GetSHIJUAQI_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSHIJUAQI" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_GetSHIJUAQI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSHIJUAQIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_WriteEnentInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteEnentInfo" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_WriteEnentInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteEnentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_GetEventInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventInfo" />
+  </wsdl:message>
+  <wsdl:message name="IOnLineDataServerInterface_GetEventInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IOnLineDataServerInterface">
+    <wsdl:operation name="SqlOpration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/SqlOpration" message="tns:IOnLineDataServerInterface_SqlOpration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/SqlOprationResponse" message="tns:IOnLineDataServerInterface_SqlOpration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SqlSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/SqlSearch" message="tns:IOnLineDataServerInterface_SqlSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/SqlSearchResponse" message="tns:IOnLineDataServerInterface_SqlSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="JoinSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/JoinSearch" message="tns:IOnLineDataServerInterface_JoinSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/JoinSearchResponse" message="tns:IOnLineDataServerInterface_JoinSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnlineMonitorObjSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/OnlineMonitorObjSearch" message="tns:IOnLineDataServerInterface_OnlineMonitorObjSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/OnlineMonitorObjSearchResponse" message="tns:IOnLineDataServerInterface_OnlineMonitorObjSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnlineSiteInfoObjSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/OnlineSiteInfoObjSearch" message="tns:IOnLineDataServerInterface_OnlineSiteInfoObjSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/OnlineSiteInfoObjSearchResponse" message="tns:IOnLineDataServerInterface_OnlineSiteInfoObjSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnlineSiteElementInfoObjSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/OnlineSiteElementInfoObjSearch" message="tns:IOnLineDataServerInterface_OnlineSiteElementInfoObjSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/OnlineSiteElementInfoObjSearchResponse" message="tns:IOnLineDataServerInterface_OnlineSiteElementInfoObjSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnlineMonitorObjSearchEx">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/OnlineMonitorObjSearchEx" message="tns:IOnLineDataServerInterface_OnlineMonitorObjSearchEx_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/OnlineMonitorObjSearchExResponse" message="tns:IOnLineDataServerInterface_OnlineMonitorObjSearchEx_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnlineMonitorObjDaySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/OnlineMonitorObjDaySearch" message="tns:IOnLineDataServerInterface_OnlineMonitorObjDaySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/OnlineMonitorObjDaySearchResponse" message="tns:IOnLineDataServerInterface_OnlineMonitorObjDaySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteHourAQI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/WriteHourAQI" message="tns:IOnLineDataServerInterface_WriteHourAQI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/WriteHourAQIResponse" message="tns:IOnLineDataServerInterface_WriteHourAQI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHourAQI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/GetHourAQI" message="tns:IOnLineDataServerInterface_GetHourAQI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/GetHourAQIResponse" message="tns:IOnLineDataServerInterface_GetHourAQI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSHIJUAQI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/GetSHIJUAQI" message="tns:IOnLineDataServerInterface_GetSHIJUAQI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/GetSHIJUAQIResponse" message="tns:IOnLineDataServerInterface_GetSHIJUAQI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteEnentInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/WriteEnentInfo" message="tns:IOnLineDataServerInterface_WriteEnentInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/WriteEnentInfoResponse" message="tns:IOnLineDataServerInterface_WriteEnentInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/GetEventInfo" message="tns:IOnLineDataServerInterface_GetEventInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOnLineDataServerInterface/GetEventInfoResponse" message="tns:IOnLineDataServerInterface_GetEventInfo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IOnLineDataServerInterface" type="tns:IOnLineDataServerInterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SqlOpration">
+      <soap:operation soapAction="http://tempuri.org/IOnLineDataServerInterface/SqlOpration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SqlSearch">
+      <soap:operation soapAction="http://tempuri.org/IOnLineDataServerInterface/SqlSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JoinSearch">
+      <soap:operation soapAction="http://tempuri.org/IOnLineDataServerInterface/JoinSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnlineMonitorObjSearch">
+      <soap:operation soapAction="http://tempuri.org/IOnLineDataServerInterface/OnlineMonitorObjSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnlineSiteInfoObjSearch">
+      <soap:operation soapAction="http://tempuri.org/IOnLineDataServerInterface/OnlineSiteInfoObjSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnlineSiteElementInfoObjSearch">
+      <soap:operation soapAction="http://tempuri.org/IOnLineDataServerInterface/OnlineSiteElementInfoObjSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnlineMonitorObjSearchEx">
+      <soap:operation soapAction="http://tempuri.org/IOnLineDataServerInterface/OnlineMonitorObjSearchEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnlineMonitorObjDaySearch">
+      <soap:operation soapAction="http://tempuri.org/IOnLineDataServerInterface/OnlineMonitorObjDaySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteHourAQI">
+      <soap:operation soapAction="http://tempuri.org/IOnLineDataServerInterface/WriteHourAQI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHourAQI">
+      <soap:operation soapAction="http://tempuri.org/IOnLineDataServerInterface/GetHourAQI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSHIJUAQI">
+      <soap:operation soapAction="http://tempuri.org/IOnLineDataServerInterface/GetSHIJUAQI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteEnentInfo">
+      <soap:operation soapAction="http://tempuri.org/IOnLineDataServerInterface/WriteEnentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventInfo">
+      <soap:operation soapAction="http://tempuri.org/IOnLineDataServerInterface/GetEventInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OnLineDataServiceLib">
+    <wsdl:port name="BasicHttpBinding_IOnLineDataServerInterface" binding="tns:BasicHttpBinding_IOnLineDataServerInterface">
+      <soap:address location="http://10.66.9.113:8001/WCF_Services/OnLineDataService" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IOnLineDataServerInterface1" binding="tns:BasicHttpBinding_IOnLineDataServerInterface">
+      <soap:address location="http://192.168.210.113:8004/WCF_Services/OnLineDataService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

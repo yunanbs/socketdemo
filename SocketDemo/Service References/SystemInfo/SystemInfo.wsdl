@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://SystemInfo/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://SystemInfo/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://SystemInfo/">
+      <s:element name="writeEventEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventstructs" type="tns:ArrayOfEventStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEventStruct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EventStruct" type="tns:EventStruct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EventStruct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Event" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="writeEventExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="writeEventExResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writeEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eventstruct" type="tns:EventStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="writeEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="writeEventResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="readEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="readEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="readEventResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="readEventString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="readEventStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="readEventStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="refresh">
+        <s:complexType />
+      </s:element>
+      <s:element name="refreshResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="refreshResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAppName">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAppNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAppNameResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEventCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEventCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getEventCountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clearAppInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="appName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clearAppInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="clearAppInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="writeEventExSoapIn">
+    <wsdl:part name="parameters" element="tns:writeEventEx" />
+  </wsdl:message>
+  <wsdl:message name="writeEventExSoapOut">
+    <wsdl:part name="parameters" element="tns:writeEventExResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeEventSoapIn">
+    <wsdl:part name="parameters" element="tns:writeEvent" />
+  </wsdl:message>
+  <wsdl:message name="writeEventSoapOut">
+    <wsdl:part name="parameters" element="tns:writeEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="readEventSoapIn">
+    <wsdl:part name="parameters" element="tns:readEvent" />
+  </wsdl:message>
+  <wsdl:message name="readEventSoapOut">
+    <wsdl:part name="parameters" element="tns:readEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="readEventStringSoapIn">
+    <wsdl:part name="parameters" element="tns:readEventString" />
+  </wsdl:message>
+  <wsdl:message name="readEventStringSoapOut">
+    <wsdl:part name="parameters" element="tns:readEventStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="refreshSoapIn">
+    <wsdl:part name="parameters" element="tns:refresh" />
+  </wsdl:message>
+  <wsdl:message name="refreshSoapOut">
+    <wsdl:part name="parameters" element="tns:refreshResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAppNameSoapIn">
+    <wsdl:part name="parameters" element="tns:getAppName" />
+  </wsdl:message>
+  <wsdl:message name="getAppNameSoapOut">
+    <wsdl:part name="parameters" element="tns:getAppNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEventCountSoapIn">
+    <wsdl:part name="parameters" element="tns:getEventCount" />
+  </wsdl:message>
+  <wsdl:message name="getEventCountSoapOut">
+    <wsdl:part name="parameters" element="tns:getEventCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="clearAppInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:clearAppInfo" />
+  </wsdl:message>
+  <wsdl:message name="clearAppInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:clearAppInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SystemInfoSoap">
+    <wsdl:operation name="writeEventEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">批量写入系统事件</wsdl:documentation>
+      <wsdl:input message="tns:writeEventExSoapIn" />
+      <wsdl:output message="tns:writeEventExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="writeEvent">
+      <wsdl:input message="tns:writeEventSoapIn" />
+      <wsdl:output message="tns:writeEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="readEvent">
+      <wsdl:input message="tns:readEventSoapIn" />
+      <wsdl:output message="tns:readEventSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="readEventString">
+      <wsdl:input message="tns:readEventStringSoapIn" />
+      <wsdl:output message="tns:readEventStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="refresh">
+      <wsdl:input message="tns:refreshSoapIn" />
+      <wsdl:output message="tns:refreshSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAppName">
+      <wsdl:input message="tns:getAppNameSoapIn" />
+      <wsdl:output message="tns:getAppNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEventCount">
+      <wsdl:input message="tns:getEventCountSoapIn" />
+      <wsdl:output message="tns:getEventCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clearAppInfo">
+      <wsdl:input message="tns:clearAppInfoSoapIn" />
+      <wsdl:output message="tns:clearAppInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SystemInfoSoap" type="tns:SystemInfoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="writeEventEx">
+      <soap:operation soapAction="http://SystemInfo/writeEventEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeEvent">
+      <soap:operation soapAction="http://SystemInfo/writeEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readEvent">
+      <soap:operation soapAction="http://SystemInfo/readEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readEventString">
+      <soap:operation soapAction="http://SystemInfo/readEventString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="refresh">
+      <soap:operation soapAction="http://SystemInfo/refresh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAppName">
+      <soap:operation soapAction="http://SystemInfo/getAppName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEventCount">
+      <soap:operation soapAction="http://SystemInfo/getEventCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clearAppInfo">
+      <soap:operation soapAction="http://SystemInfo/clearAppInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SystemInfoSoap12" type="tns:SystemInfoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="writeEventEx">
+      <soap12:operation soapAction="http://SystemInfo/writeEventEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeEvent">
+      <soap12:operation soapAction="http://SystemInfo/writeEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readEvent">
+      <soap12:operation soapAction="http://SystemInfo/readEvent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readEventString">
+      <soap12:operation soapAction="http://SystemInfo/readEventString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="refresh">
+      <soap12:operation soapAction="http://SystemInfo/refresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAppName">
+      <soap12:operation soapAction="http://SystemInfo/getAppName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEventCount">
+      <soap12:operation soapAction="http://SystemInfo/getEventCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clearAppInfo">
+      <soap12:operation soapAction="http://SystemInfo/clearAppInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SystemInfo">
+    <wsdl:port name="SystemInfoSoap" binding="tns:SystemInfoSoap">
+      <soap:address location="http://192.168.10.1/SystemInfo/SystemInfo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SystemInfoSoap12" binding="tns:SystemInfoSoap12">
+      <soap12:address location="http://192.168.10.1/SystemInfo/SystemInfo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

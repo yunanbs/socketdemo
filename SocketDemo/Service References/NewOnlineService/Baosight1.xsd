@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Baosight" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Baosight" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="DataClass">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="keyvalue" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="prop00" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop01" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop02" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop03" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop04" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop05" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop06" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop07" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop08" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop09" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop10" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop11" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop12" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop13" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop14" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop15" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop16" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop17" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop18" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop19" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop20" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop21" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop22" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop23" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop24" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop25" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop26" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop27" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop28" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop29" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop30" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop31" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop32" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop33" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop34" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop35" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop36" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop37" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop38" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop39" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop40" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop41" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop42" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop43" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop44" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop45" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop46" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop47" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop48" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prop49" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="propkeys" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataClass" nillable="true" type="tns:DataClass" />
+  <xs:complexType name="ArrayOfDataClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataClass" nillable="true" type="tns:DataClass" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataClass" nillable="true" type="tns:ArrayOfDataClass" />
+</xs:schema>

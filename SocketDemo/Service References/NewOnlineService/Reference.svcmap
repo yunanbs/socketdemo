@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ba8d6d33-74a3-4456-8f5b-ffe67f39b262" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.210.113:8003/WCF_Services/OnLineDataService/Mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="a4f354df-0baa-480d-a278-733222084ae2" SourceId="1" SourceUrl="http://192.168.210.113:8003/WCF_Services/OnLineDataService/Mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="6affe9a4-865d-45e6-b484-eec94a12926f" SourceId="1" SourceUrl="http://192.168.210.113:8003/WCF_Services/OnLineDataService/Mex" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="b5e63cc4-312b-4f2a-89e3-07d8c68ec468" SourceId="1" SourceUrl="http://192.168.210.113:8003/WCF_Services/OnLineDataService/Mex" />
+    <MetadataFile FileName="Baosight.DataLib1.xsd" MetadataType="Schema" ID="e18962c0-cbd9-40b8-8005-d55c6b850a4b" SourceId="1" SourceUrl="http://192.168.210.113:8003/WCF_Services/OnLineDataService/Mex" />
+    <MetadataFile FileName="Baosight1.xsd" MetadataType="Schema" ID="a410912f-59f4-4c41-a454-ead3d0f796e7" SourceId="1" SourceUrl="http://192.168.210.113:8003/WCF_Services/OnLineDataService/Mex" />
+    <MetadataFile FileName="Arrays1.xsd" MetadataType="Schema" ID="50f4d3b0-f20d-439a-907d-fcf8f7f15976" SourceId="1" SourceUrl="http://192.168.210.113:8003/WCF_Services/OnLineDataService/Mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

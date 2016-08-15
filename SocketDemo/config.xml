@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <Sites>
+    <Client>
+       <Site name="同济路大屏" IP="" port="9001" baudrate="" protocol ="AW2010" heart="false">
+        <APITag type ="SO2" name ="GYSSO2API"/>
+        <APITag type ="NO2" name ="GYSNO2API"/>
+        <APITag type ="PM10" name ="GYSPM10API"/>
+       </Site>
+      <Site name="节能环保园大屏" IP="" port="9002" baudrate="" protocol ="AW2010" heart="false">
+        <APITag type ="SO2" name ="SNSO2API"/>
+        <APITag type ="NO2" name ="SNNO2API"/>
+        <APITag type ="PM10" name ="SNPM10API"/>
+      </Site>
+      <Site name="湿地公园大屏" IP="" port="9003" baudrate="" protocol ="AW2010" heart="false">
+        <APITag type ="SO2" name ="LHBJSO2API"/>
+        <APITag type ="NO2" name ="LHBJNO2API"/>
+        <APITag type ="PM10" name ="LHBJPM10API"/>
+      </Site>
+      
+      <Site name="殷泰纸业废水总排口" IP="" port="5401" baudrate="" protocol ="BaoShan" heart="true"></Site>
+
+      <Site name="上硫厂地表水站点" IP="" port="6001" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      
+      <Site name="新环保局(杨行)空气站" IP="" port="8908" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="淞南空气子站" IP="" port="8909" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="钢研所空气子站" IP="" port="8910" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="环保局空气子站" IP="" port="8911" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="庙行空气子站" IP="" port="8915" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="罗店空气子站" IP="" port="5327" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="大场空气子站" IP="" port="5328" baudrate="" protocol ="BaoShan" heart="true"></Site>
+
+      <Site name="同济路泰和路子站" IP="" port="8912" baudrate="" protocol ="BaoShan" heart="true"></Site>
+
+      <Site name="移动监测车" IP="" port="8913" baudrate="" protocol ="BaoShan" heart="true"></Site>
+
+	<Site name="同济路泰和路子站PM10" IP="" port="8914" baudrate="" protocol ="BaoShan" heart="true"></Site>
+
+      <Site name="上海钤兰卫生用品有限公司" IP="" port="4012" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="上海锦江麒麟饮料食品有限公司" IP="" port="4009" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="上海宝翼制罐有限公司" IP="" port="4002" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      
+      <Site name="上海宝山罗南漂白厂" IP="" port="4001" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="上海杰欣五金制品有限公司" IP="" port="4008" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="上海国际港务股份有限公司煤炭分公司" IP="" port="4004" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="上海汉康豆类食品有限公司" IP="" port="4005" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="上海昊华聚苯乙烯有限公司" IP="" port="4006" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="上海肖泾电镀有限公司" IP="" port="4013" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="上海罗泾电镀有限公司" IP="" port="4010" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="上海罗泾染料化工有限公司" IP="" port="4011" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="上海渊辉金属表面处理有限公司" IP="" port="4014" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="上海国际港务股份有限公司宝山分公司" IP="" port="4003" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      
+      <Site name="上海富国皮革厂" IP="" port="4016" baudrate="" protocol ="BaoShan" heart="true"></Site>
+      <Site name="新格金属烟气排口" IP="" port="5001" baudrate="" protocol ="BaoShan" heart="true"></Site>
+    </Client>
+<Server></Server>
+<Com></Com>
+  </Sites>
+  <Hosts>
+
+  </Hosts>
+  <Protocols>
+    <BaoShan>
+      <Pack Header="##" Ender="\r\n" DataTime="DataTime"></Pack>
+      <Datas>
+        <PH name ="PV01" value="01"></PH>
+        <COD name ="CV01" value="02"></COD>
+        <瞬时流量 name ="FV01" value="03"></瞬时流量>
+	<累计流量 name ="FV02" value="04"></累计流量>
+        
+        <CO name="a01005" value="01"></CO>
+        <NO name="a21003" value="02"></NO>
+        <NO2 name="a21004" value="03"></NO2>
+        <NOX name="a21002" value="04"></NOX>
+        <O3 name="a05024" value="05"></O3>
+        <PM1.0 name="a34005" value ="06"></PM1.0>
+        <SO2 name="a21026" value="07"></SO2>
+        <PM2.5 name="a34004" value ="08"></PM2.5>
+	<风向 name="a01008" value="09"></风向>
+        <风速 name="a01007" value="10"></风速>
+        <大气温度 name="a01001" value ="11"></大气温度>
+        <大气湿度 name="a01002" value="12"></大气湿度>
+        <大气压力 name="a01006" value ="13"></大气压力>
+	<安防信号 name="af0001" value ="14"></安防信号>
+	<PM10 name="a34002" value ="15"></PM10>
+        <PM2.5 name="a34050" value ="08"></PM2.5>
+
+
+        <乙烷 name="a24001" value ="01" />
+        <乙烯 name="a24045" value ="02"/>
+        <丙烷 name="a24002" value ="03"/>
+	<二氟二氯甲 name="a24131" value="04"/>
+        <丙烯 name="a24053" value="05"/>
+	<异丁烷 name="a24038" value="06"/>
+        <正丁烷 name="a24037" value="07"/>
+        <乙炔 name="a24079" value="08"/>
+	<氯甲烷 name="a24099" value="09"/>
+	<反-2-丁烯 name="a24064" value="10"/>
+    	<一氯乙烯 name="a24136" value="11"/>
+	<v1-丁烯 name="a24120" value="12"/>
+	<环戊烷 name="a24122" value="13"/>
+	<一氟三氯甲烷 name="a24132" value="14"/>
+	<顺-2-丁烯 name="a24063" value="15"/>
+	<异戊烷 name="a24041" value="16"/>
+	<正戊烷 name="a24039" value="17"/>
+	<v13-丁二烯 name="a24078" value="18"/>
+	<反-2-戊烯 name="a24077" value="19"/>
+	<v2-甲基-2-丁烯 name="a24127" value="20"/>
+	<v1-戊烯 name="a24074" value="21" />
+	<顺-2-戊烯 name="a24076" value="22" />
+	<v3-甲基戊烷 name="a24117" value="23" />
+	<甲基环戊烷 name="a24123" value="24" />
+	<二氯甲烷 name="a24003" value="25" />
+	<v23-二甲基丁烷 name="a24118" value="26" />
+	<v23-甲基戊烷 name="a24121" value="27" />
+	<正己烷 name="a24042" value="28" />
+	<三氟三氯乙烷  name="a24133" value="29" />
+	<异戊二烯  name="a24061" value="30" />
+	<v2-甲基-1-戊烯  name="a24126" value="31" />
+	<v11-二氯乙烷  name="a24016" value="32" />
+	<顺-12-二氯乙  name="a24111" value="33" />
+	<三氯甲烷  name="a24004" value="34" />
+	<v12二氯乙烷  name="a24017" value="35" />
+	<v111-三氯乙烷  name="a24018" value="36" />
+	<苯  name="a25002" value="37" />
+	<四氯化碳  name="a24005" value="38" />
+	<环己烷 name="a24036" value="39" />
+	<v23-二甲基戊烷 name="a24124" value="40" />
+	<v3-甲基己烷 name="a24130" value="41" />
+	<v12-二氯丙烷 name="a24027" value="42" />
+	<三氯乙烯 name="a24049" value="43" />
+	<v224-三甲基戊烷 name="a24012" value="44" />
+	<正庚烷 name="a24043" value="45" />
+	<反-13二氯丙烯 name="a24112" value="46" />
+	<甲基环己烷 name="a24084" value="47" />
+	<顺-13二氯丙烯 name="a24054" value="48" /> 
+	<v112-三氯乙烷 name="a24019" value="49" />
+	<v234-三甲基戊烷 name="a24125" value="50" />
+	<甲苯 name="a25003" value="51" />
+	<v2-甲基庚烷  name="a24128" value="52" />
+	<v3-甲基庚烷   name="a24129" value="53" />
+	<v12-二溴乙烷   name="a24034" value="54" />
+	<正辛烷 name="a24070" value="55" />
+	<四氯乙烯 name="a24050" value="56" />
+	<氯苯 name="a25010" value="57" />
+	<乙苯 name="a25004" value="58" />
+	<间对二甲苯 name="a25084" value="59" />
+	<苯乙烯 name="a25038" value="60" />
+	<邻二甲苯 name="a25006" value="61" />
+	<正壬烷 name="a24044" value="62" />
+	<异丙基苯 name="a25034" value="63" />
+	<α-蒎烯 name="a24138" value="64" />
+	<正丙苯 name="a25033" value="65" />
+	<苯乙烯 name="a25085" value="66" />
+	<对乙基甲苯 name="a25087" value="67" />
+	<v135-三甲基苯  name="a25021" value="68" />
+	<邻二乙甲苯  name="a25086" value="69" />
+	<β-蒎烯   name="a24139" value="70" />
+	<v124-三甲基苯 name="a25019" value="71" />
+	<v13-二氯苯 name="a25012" value="72" />
+	<正癸烷 name="a24068" value="73" />
+	<v14-二氯苯 name="a25013" value="74" />
+	<v123-三甲基苯  name="a25020" value="75" />
+	<v12-二氯苯  name="a25011" value="76" />
+	<苎烯 name="a24137" value="77" />
+	<间二乙苯 name="a25088" value="78" />
+	<对二乙苯 name="a25089" value="79" />
+	<正十一烷 name="a24134" value="80" />
+	<v124-三氯苯 name="a25015" value="81" />
+	<萘 name="a25059" value="82" />
+	<十二烷 name="a24135" value="83" />
+	<六氯-13丁二烯 name="a24113" value="84" />
+
+	<甲硫醚 name="a28001" value="85" />
+	<二硫化碳 name="a99051" value="86" />
+	<二甲二硫醚 name="a28010" value="87" />
+	<乙硫醇 name="a30023" value="88" />
+	<v2-甲基戊烷 name="a24011" value="89" />
+	<四氯化钛 name="a20096" value="90" />
+	<甲硫醇 name="a30002" value="91" />
+      
+
+	<THC name="a05031" value ="16"></THC>
+	<CH4 name="a05002" value ="17"></CH4>
+	<NMHC name="a05032" value ="18"></NMHC>
+	<雨量 name="a06001" value ="19"></雨量>
+	<CO name="a21005" value="20"></CO>
+	<H2S name="a21028" value="0a"/>
+	<NH3 name="a21001" value="0b"/>
+	
+	<站房温度 name="a01031" value ="21"></站房温度>
+        <站房湿度 name="a01032" value="22"></站房湿度>
+
+        <溶解氧 name="w01009" value="01"/>
+        <温度 name="w01010" value="02"/>
+        <pH name="w01001" value="03"/>
+        <电导率 name="w01014" value="04"/>
+        <浊度 name="w01003" value="05"/>
+        <高锰酸盐指数 name="w01019" value="06"/>
+        <氨氮 name="w21003" value="07"/>
+        <总氮 name="w21001" value="08"/>
+        <总磷 name="w21011" value="09"/>
+        <总有机碳 name="w01020" value="10"/>
+        <流速 name="w01022" value="11"/>
+	<流位 name="w01023" value="12"/>
+        <留样仪剩余瓶数 name="w19900" value="13"/>
+	<cod name="w01018" value="14"/>
+	<瞬时流量Flow name="w01024" value="15"/>
+	<累计流量Volume name="w01025" value="16"/>
+	<总铬 name="w20116" value="17"/>
+        
+	<烟尘 name="01" value="01"/>
+        <二氧化硫 name="02" value="02"/>
+        <氮氧化物 name="03" value="03"/>
+        <O2 name="S01" value="04"/>
+        <流速 name="S02" value="05"/>
+        <温度 name="S03" value="06"/>
+        <压力 name="S08" value="07"/>
+        <热态流量 name="S09" value="08"/>
+
+
+
+
+
+
+
+      </Datas>
+      <DataType>
+        <实时值 name ="Rtd" value="00"></实时值>
+        <平均值 name ="Avg" value="01"></平均值>
+        <最小值 name ="Min" value="02"></最小值>
+        <最大值 name ="Max" value="03"></最大值>
+	<累计值 name ="Cou" value="04"></累计值>
+	<折算平均值 name ="ZsAvg" value="11"></折算平均值>
+        <折算最小值 name ="ZsMin" value="12"></折算最小值>
+        <折算最大值 name ="ZsMax" value="13"></折算最大值>
+      </DataType>
+      <CommandType>
+        <五分钟 name="2082" value="05"></五分钟>
+        <五分钟 name="2081" value="05"></五分钟>
+        <一分钟 name="2051" value="01"></一分钟>
+        <一小时 name="2061" value="60"></一小时>
+        
+	<半小时 name ="6100" value="31"></半小时>
+	<半小时 name ="6200" value="31"></半小时>
+        <一小时 name="6101" value="61"></一小时>
+	<一小时 name="6201" value="61"></一小时>
+	<一天 name="6102" value="24"></一天>
+	<一天 name="6202" value="24"></一天>
+      </CommandType>
+      <SiteType>
+        <站点类型 name ="32" value ="WS"></站点类型>
+        <站点类型 name ="22" value ="DQ"></站点类型>
+	<站点类型 name ="31" value ="DQ"></站点类型>
+        <站点类型 name ="91" value ="Sys"></站点类型>
+      </SiteType>
+      <ErrorCode>
+        <ecod1 ecodname="XYH" fxcode='01' ecodtype="status" ecoddesc="Less than ##% Data"/>
+        <ecod2 ecodname="P" fxcode='02' ecodtype="status" ecoddesc="Power Fail"/>
+        <ecod3 ecodname="D" fxcode='03' ecodtype="status" ecoddesc="Disabled"/>
+        <ecod4 ecodname="T" fxcode='04' ecodtype="status" ecoddesc="Out of Control"/>
+        <ecod5 ecodname="F" fxcode='05' ecodtype="status" ecoddesc="Boiler off line"/>
+        <ecod6 ecodname="B" fxcode='06' ecodtype="flags" ecoddesc="Bad Status"/>
+        <ecod7 ecodname="C" fxcode='07' ecodtype="flags" ecoddesc="Calibration"/>
+        <ecod8 ecodname="M" fxcode='08' ecodtype="flags" ecoddesc="Maintenance"/>
+        <ecod9 ecodname="O" fxcode='09' ecodtype="flags" ecoddesc="Analog Overrange"/>
+        <ecod10 ecodname="U" fxcode='10' ecodtype="flags" ecoddesc="Analog Underrange"/>
+        <ecod11 ecodname="A" fxcode='11' ecodtype="flags" ecoddesc="Arithmetic Error"/>
+        <ecod12 ecodname="+" fxcode='12' ecodtype="flags" ecoddesc="Maximum"/>
+        <ecod13 ecodname="-" fxcode='13' ecodtype="flags" ecoddesc="Minimum"/>
+        <ecod14 ecodname="R" fxcode='14' ecodtype="flags" ecoddesc="Rate of Change"/>
+        <ecod15 ecodname="H" fxcode='15' ecodtype="flags" ecoddesc="High High Alarm"/>
+        <ecod16 ecodname="L" fxcode='16' ecodtype="flags" ecoddesc="Low Low Alarm"/>
+        <ecod17 ecodname="h" fxcode='17' ecodtype="flags" ecoddesc="High Alarm"/>
+        <ecod18 ecodname="l" fxcode='18' ecodtype="flags" ecoddesc="Low Alarm"/>
+        <ecod19 ecodname="J" fxcode='19' ecodtype="flags" ecoddesc="High Rate of Change"/>
+        <ecod20 ecodname="j" fxcode='20' ecodtype="flags" ecoddesc="Low Rate of Change"/>
+        <ecod21 ecodname="V" fxcode='21' ecodtype="flags" ecoddesc="DIS #1 Obs"/>
+        <ecod22 ecodname="W" fxcode='22' ecodtype="flags" ecoddesc="DIS #2 Obs"/>
+        <ecod23 ecodname="X" fxcode='23' ecodtype="flags" ecoddesc="DIS #3 Obs"/>
+        <ecod24 ecodname="Y" fxcode='24' ecodtype="flags" ecoddesc="DIS #4 Obs"/>
+        <ecod25 ecodname="Z" fxcode='25' ecodtype="flags" ecoddesc="DIS #5 Obs"/>
+        <ecod26 ecodname="DYH" fxcode='26' ecodtype="flags" ecoddesc="NONE"/>
+      </ErrorCode>
+    </BaoShan>
+
+    <AW2010>
+      <Pack Header="Package" Ender="/Package" DataTime="Flag" CMLabel="Class"></Pack>
+      <CommandType>
+        <实时数据 name="[N001]" value="0060"></实时数据>
+        <积分统计数据 name="[N011]" value="0600"></积分统计数据>
+      </CommandType>
+      <Datas>
+        <实时噪声数据 name="Lafp" value="01"></实时噪声数据>
+        <Leq name="Leq" value="02"></Leq>
+        <L5 name="L5" value="03"></L5>
+        <L10 name="L10" value="04"></L10>
+        <L50 name="L50" value="05"></L50>
+        <L90 name="L90" value="06"></L90>
+        <L95 name="L95" value="07"></L95>
+      </Datas>
+    </AW2010>
+  </Protocols>
+</Root>
+
+
+<!--
+<Site name="殷泰纸业废水总排口" IP="" port="5401" baudrate="" protocol ="BaoShan" heart="false"></Site>
+<Site name="新环保局空气测试" IP="" port="8908" baudrate="" protocol ="BaoShan" heart="false"></Site>
+-->

@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetHisDataWithFlag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tagname" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bdt" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="edt" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHisDataWithFlagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHisDataWithFlagResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PackinDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sourcepack" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="callbackpack" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PackinDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PackinDBResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="callbackpack" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDateCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDateCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDateCNResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCheckDateCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCheckDateCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCheckDateCNResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataFlagCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ElementName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataFlagCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataFlagCNResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEditTaskCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="taskid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="starttime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEditTaskCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEditTaskCNResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskCN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ctid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ctidd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bdt" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="edt" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaskCNResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRemoteCNLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bdt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRemoteCNLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRemoteCNLogResult" type="tns:ArrayOfRemoteLog" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRemoteLog">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RemoteLog" nillable="true" type="tns:RemoteLog" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RemoteLog">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SourcePack" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiteName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bak" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryMonitorClass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryMonitorClassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryMonitorClassResult" type="tns:ArrayOfMonitorClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMonitorClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MonitorClass" nillable="true" type="tns:MonitorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MonitorClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClassID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClassNa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiteName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryWorkItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryWorkItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryWorkItemResult" type="tns:ArrayOfWorkItemC" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWorkItemC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WorkItemC" nillable="true" type="tns:WorkItemC" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WorkItemC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WorkID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClassID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkItem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiteName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryMTNItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryMTNItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryMTNItemResult" type="tns:ArrayOfMTNItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMTNItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MTNItem" nillable="true" type="tns:MTNItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MTNItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ItemMID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Station" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Checkor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Chiefer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CheckDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Checked" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiteName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryMTNItem_D">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryMTNItem_DResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryMTNItem_DResult" type="tns:ArrayOfMTNItem_D" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMTNItem_D">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MTNItem_D" nillable="true" type="tns:MTNItem_D" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MTNItem_D">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ItemDID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemMID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClassID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiteName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryCalibWay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCalibWayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCalibWayResult" type="tns:ArrayOfCalibWay" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCalibWay">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CalibWay" nillable="true" type="tns:CalibWay" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CalibWay">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CWID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CWName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiteName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryCalibType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCalibTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCalibTypeResult" type="tns:ArrayOfCalibType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCalibType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CalibType" nillable="true" type="tns:CalibType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CalibType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TYID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiteName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryCalibItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCalibItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCalibItemResult" type="tns:ArrayOfCalibItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCalibItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CalibItem" nillable="true" type="tns:CalibItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CalibItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CIName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiteName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryCalibTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCalibTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCalibTaskResult" type="tns:ArrayOfCalibTask" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCalibTask">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CalibTask" nillable="true" type="tns:CalibTask" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CalibTask">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CTID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CTName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CWID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DayCount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CTWays" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DORenew" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RSRenew" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CTFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiteName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryCalibTaskD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCalibTaskDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCalibTaskDResult" type="tns:ArrayOfCalibTaskD" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCalibTaskD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CalibTaskD" nillable="true" type="tns:CalibTaskD" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CalibTaskD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CTID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CTIDD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TYID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DOOrder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RSOrder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SucResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BeginTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AvgValueT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegainSec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiteName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryCalibTaskDD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCalibTaskDDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCalibTaskDDResult" type="tns:ArrayOfCalibTaskDD" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCalibTaskDD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CalibTaskDD" nillable="true" type="tns:CalibTaskDD" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CalibTaskDD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CTIDD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CTIDDD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CIID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Unit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AllowErr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiteName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryCalibReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCalibReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCalibReportResult" type="tns:ArrayOfCalibReport" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCalibReport">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CalibReport" nillable="true" type="tns:CalibReport" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CalibReport">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CRID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CTName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CWName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CIName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BeginTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UseTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActCon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Unit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AllowErr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultDe" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SiteName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryCalibTaskNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sitename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryCalibTaskNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCalibTaskNewResult" type="tns:ArrayOfCalibTaskNew" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCalibTaskNew">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CalibTaskNew" nillable="true" type="tns:CalibTaskNew" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CalibTaskNew">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TASKID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASKNAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASKDEATIAL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STARTTIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FREQUCE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SITENAME" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="testResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="testResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetHisDataWithFlagSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHisDataWithFlag" />
+  </wsdl:message>
+  <wsdl:message name="GetHisDataWithFlagSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHisDataWithFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="PackinDBSoapIn">
+    <wsdl:part name="parameters" element="tns:PackinDB" />
+  </wsdl:message>
+  <wsdl:message name="PackinDBSoapOut">
+    <wsdl:part name="parameters" element="tns:PackinDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDateCNSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDateCN" />
+  </wsdl:message>
+  <wsdl:message name="GetDateCNSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDateCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCheckDateCNSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCheckDateCN" />
+  </wsdl:message>
+  <wsdl:message name="GetCheckDateCNSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCheckDateCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataFlagCNSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataFlagCN" />
+  </wsdl:message>
+  <wsdl:message name="GetDataFlagCNSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataFlagCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEditTaskCNSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEditTaskCN" />
+  </wsdl:message>
+  <wsdl:message name="GetEditTaskCNSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEditTaskCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskCNSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaskCN" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskCNSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRemoteCNLogSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRemoteCNLog" />
+  </wsdl:message>
+  <wsdl:message name="GetRemoteCNLogSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRemoteCNLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryMonitorClassSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryMonitorClass" />
+  </wsdl:message>
+  <wsdl:message name="QueryMonitorClassSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryMonitorClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryWorkItemSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryWorkItem" />
+  </wsdl:message>
+  <wsdl:message name="QueryWorkItemSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryWorkItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryMTNItemSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryMTNItem" />
+  </wsdl:message>
+  <wsdl:message name="QueryMTNItemSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryMTNItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryMTNItem_DSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryMTNItem_D" />
+  </wsdl:message>
+  <wsdl:message name="QueryMTNItem_DSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryMTNItem_DResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibWaySoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCalibWay" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibWaySoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCalibWayResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCalibType" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCalibTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibItemSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCalibItem" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibItemSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCalibItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCalibTask" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCalibTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibTaskDSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCalibTaskD" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibTaskDSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCalibTaskDResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibTaskDDSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCalibTaskDD" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibTaskDDSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCalibTaskDDResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibReportSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCalibReport" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibReportSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCalibReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibTaskNewSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCalibTaskNew" />
+  </wsdl:message>
+  <wsdl:message name="QueryCalibTaskNewSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCalibTaskNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="testSoapIn">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="testSoapOut">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="GetHisDataWithFlag">
+      <wsdl:input message="tns:GetHisDataWithFlagSoapIn" />
+      <wsdl:output message="tns:GetHisDataWithFlagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PackinDB">
+      <wsdl:input message="tns:PackinDBSoapIn" />
+      <wsdl:output message="tns:PackinDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDateCN">
+      <wsdl:input message="tns:GetDateCNSoapIn" />
+      <wsdl:output message="tns:GetDateCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckDateCN">
+      <wsdl:input message="tns:GetCheckDateCNSoapIn" />
+      <wsdl:output message="tns:GetCheckDateCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataFlagCN">
+      <wsdl:input message="tns:GetDataFlagCNSoapIn" />
+      <wsdl:output message="tns:GetDataFlagCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEditTaskCN">
+      <wsdl:input message="tns:GetEditTaskCNSoapIn" />
+      <wsdl:output message="tns:GetEditTaskCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskCN">
+      <wsdl:input message="tns:GetTaskCNSoapIn" />
+      <wsdl:output message="tns:GetTaskCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemoteCNLog">
+      <wsdl:input message="tns:GetRemoteCNLogSoapIn" />
+      <wsdl:output message="tns:GetRemoteCNLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMonitorClass">
+      <wsdl:input message="tns:QueryMonitorClassSoapIn" />
+      <wsdl:output message="tns:QueryMonitorClassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryWorkItem">
+      <wsdl:input message="tns:QueryWorkItemSoapIn" />
+      <wsdl:output message="tns:QueryWorkItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMTNItem">
+      <wsdl:input message="tns:QueryMTNItemSoapIn" />
+      <wsdl:output message="tns:QueryMTNItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMTNItem_D">
+      <wsdl:input message="tns:QueryMTNItem_DSoapIn" />
+      <wsdl:output message="tns:QueryMTNItem_DSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibWay">
+      <wsdl:input message="tns:QueryCalibWaySoapIn" />
+      <wsdl:output message="tns:QueryCalibWaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibType">
+      <wsdl:input message="tns:QueryCalibTypeSoapIn" />
+      <wsdl:output message="tns:QueryCalibTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibItem">
+      <wsdl:input message="tns:QueryCalibItemSoapIn" />
+      <wsdl:output message="tns:QueryCalibItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibTask">
+      <wsdl:input message="tns:QueryCalibTaskSoapIn" />
+      <wsdl:output message="tns:QueryCalibTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibTaskD">
+      <wsdl:input message="tns:QueryCalibTaskDSoapIn" />
+      <wsdl:output message="tns:QueryCalibTaskDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibTaskDD">
+      <wsdl:input message="tns:QueryCalibTaskDDSoapIn" />
+      <wsdl:output message="tns:QueryCalibTaskDDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibReport">
+      <wsdl:input message="tns:QueryCalibReportSoapIn" />
+      <wsdl:output message="tns:QueryCalibReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibTaskNew">
+      <wsdl:input message="tns:QueryCalibTaskNewSoapIn" />
+      <wsdl:output message="tns:QueryCalibTaskNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <wsdl:input message="tns:testSoapIn" />
+      <wsdl:output message="tns:testSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetHisDataWithFlag">
+      <soap:operation soapAction="http://tempuri.org/GetHisDataWithFlag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PackinDB">
+      <soap:operation soapAction="http://tempuri.org/PackinDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateCN">
+      <soap:operation soapAction="http://tempuri.org/GetDateCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckDateCN">
+      <soap:operation soapAction="http://tempuri.org/GetCheckDateCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataFlagCN">
+      <soap:operation soapAction="http://tempuri.org/GetDataFlagCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEditTaskCN">
+      <soap:operation soapAction="http://tempuri.org/GetEditTaskCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskCN">
+      <soap:operation soapAction="http://tempuri.org/GetTaskCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemoteCNLog">
+      <soap:operation soapAction="http://tempuri.org/GetRemoteCNLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMonitorClass">
+      <soap:operation soapAction="http://tempuri.org/QueryMonitorClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryWorkItem">
+      <soap:operation soapAction="http://tempuri.org/QueryWorkItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMTNItem">
+      <soap:operation soapAction="http://tempuri.org/QueryMTNItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMTNItem_D">
+      <soap:operation soapAction="http://tempuri.org/QueryMTNItem_D" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibWay">
+      <soap:operation soapAction="http://tempuri.org/QueryCalibWay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibType">
+      <soap:operation soapAction="http://tempuri.org/QueryCalibType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibItem">
+      <soap:operation soapAction="http://tempuri.org/QueryCalibItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibTask">
+      <soap:operation soapAction="http://tempuri.org/QueryCalibTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibTaskD">
+      <soap:operation soapAction="http://tempuri.org/QueryCalibTaskD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibTaskDD">
+      <soap:operation soapAction="http://tempuri.org/QueryCalibTaskDD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibReport">
+      <soap:operation soapAction="http://tempuri.org/QueryCalibReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibTaskNew">
+      <soap:operation soapAction="http://tempuri.org/QueryCalibTaskNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <soap:operation soapAction="http://tempuri.org/test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetHisDataWithFlag">
+      <soap12:operation soapAction="http://tempuri.org/GetHisDataWithFlag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PackinDB">
+      <soap12:operation soapAction="http://tempuri.org/PackinDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateCN">
+      <soap12:operation soapAction="http://tempuri.org/GetDateCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckDateCN">
+      <soap12:operation soapAction="http://tempuri.org/GetCheckDateCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataFlagCN">
+      <soap12:operation soapAction="http://tempuri.org/GetDataFlagCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEditTaskCN">
+      <soap12:operation soapAction="http://tempuri.org/GetEditTaskCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskCN">
+      <soap12:operation soapAction="http://tempuri.org/GetTaskCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemoteCNLog">
+      <soap12:operation soapAction="http://tempuri.org/GetRemoteCNLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMonitorClass">
+      <soap12:operation soapAction="http://tempuri.org/QueryMonitorClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryWorkItem">
+      <soap12:operation soapAction="http://tempuri.org/QueryWorkItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMTNItem">
+      <soap12:operation soapAction="http://tempuri.org/QueryMTNItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMTNItem_D">
+      <soap12:operation soapAction="http://tempuri.org/QueryMTNItem_D" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibWay">
+      <soap12:operation soapAction="http://tempuri.org/QueryCalibWay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibType">
+      <soap12:operation soapAction="http://tempuri.org/QueryCalibType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibItem">
+      <soap12:operation soapAction="http://tempuri.org/QueryCalibItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibTask">
+      <soap12:operation soapAction="http://tempuri.org/QueryCalibTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibTaskD">
+      <soap12:operation soapAction="http://tempuri.org/QueryCalibTaskD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibTaskDD">
+      <soap12:operation soapAction="http://tempuri.org/QueryCalibTaskDD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibReport">
+      <soap12:operation soapAction="http://tempuri.org/QueryCalibReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCalibTaskNew">
+      <soap12:operation soapAction="http://tempuri.org/QueryCalibTaskNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <soap12:operation soapAction="http://tempuri.org/test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://192.168.10.1/Cems_KQ_YU/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://192.168.10.1/Cems_KQ_YU/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

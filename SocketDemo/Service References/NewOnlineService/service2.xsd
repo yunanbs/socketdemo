@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/Baosight.DataLib" />
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/Baosight" />
+  <xs:element name="SqlOpration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="DataObj" nillable="true" type="q1:aBaseDataLib" />
+        <xs:element minOccurs="0" name="OperationFlag" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SqlOprationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SqlOprationResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SqlSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="DataObj" nillable="true" type="q2:aBaseDataLib" />
+        <xs:element minOccurs="0" name="SqlString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SqlSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="SqlSearchResult" nillable="true" type="q3:ArrayOfaBaseDataLib" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="JoinSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Baosight" minOccurs="0" name="useless" nillable="true" type="q4:DataClass" />
+        <xs:element minOccurs="0" name="SqlString" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RowCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="JoinSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Baosight" minOccurs="0" name="JoinSearchResult" nillable="true" type="q5:ArrayOfDataClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnlineMonitorObjSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="DataObj" nillable="true" type="q6:ArrayOfOnlineMonitorObj" />
+        <xs:element minOccurs="0" name="BeginTime" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnlineMonitorObjSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="OnlineMonitorObjSearchResult" nillable="true" type="q7:ArrayOfOnlineMonitorObj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnlineSiteInfoObjSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="useless" nillable="true" type="q8:OnlineSiteInfoObj" />
+        <xs:element minOccurs="0" name="SqlString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnlineSiteInfoObjSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="OnlineSiteInfoObjSearchResult" nillable="true" type="q9:ArrayOfOnlineSiteInfoObj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnlineSiteElementInfoObjSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="useless" nillable="true" type="q10:OnlineSiteElementInfoObj" />
+        <xs:element minOccurs="0" name="SiteID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SqlString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnlineSiteElementInfoObjSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="OnlineSiteElementInfoObjSearchResult" nillable="true" type="q11:ArrayOfOnlineSiteElementInfoObj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnlineMonitorObjSearchEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="useless" nillable="true" type="q12:OnlineMonitorObj" />
+        <xs:element minOccurs="0" name="SiteID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Flag" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnlineMonitorObjSearchExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="OnlineMonitorObjSearchExResult" nillable="true" type="q13:ArrayOfOnlineMonitorObj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnlineMonitorObjDaySearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="DataObj" nillable="true" type="q14:OnlineMonitorObj" />
+        <xs:element minOccurs="0" name="BeginTime" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnlineMonitorObjDaySearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="OnlineMonitorObjDaySearchResult" nillable="true" type="q15:ArrayOfOnlineMonitorObj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteHourAQI">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteHourAQIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WriteHourAQIResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHourAQI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="useless" nillable="true" type="q16:NullObj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHourAQIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetHourAQIResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSHIJUAQI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="useless" nillable="true" type="q17:NullObj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSHIJUAQIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSHIJUAQIResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteEnentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EventText" nillable="true" type="xs:string" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="useless" nillable="true" type="q18:NullObj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteEnentInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WriteEnentInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Baosight.DataLib" minOccurs="0" name="useless" nillable="true" type="q19:NullObj" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetEventInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
