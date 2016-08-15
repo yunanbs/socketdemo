@@ -804,6 +804,7 @@ namespace SocketDemo
         /// <param name="e"></param>
         private void EventTrick_Tick(object sender, EventArgs e)
         {
+            //2016年8月15日 修改 添加了事件服务的引用
             try
             {
                 using (NewOnlineService.OnLineDataServerInterfaceClient tmpclient = new NewOnlineService.OnLineDataServerInterfaceClient())
