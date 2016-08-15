@@ -292,7 +292,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(200, 519);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(816, 254);
+            this.groupBox4.Size = new System.Drawing.Size(816, 214);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "日志";
@@ -302,7 +302,7 @@
             this.rtb_log.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtb_log.Location = new System.Drawing.Point(3, 17);
             this.rtb_log.Name = "rtb_log";
-            this.rtb_log.Size = new System.Drawing.Size(810, 234);
+            this.rtb_log.Size = new System.Drawing.Size(810, 194);
             this.rtb_log.TabIndex = 2;
             this.rtb_log.Text = "";
             // 
@@ -312,7 +312,7 @@
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(200, 773);
+            this.groupBox5.Size = new System.Drawing.Size(200, 733);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             // 
@@ -321,7 +321,7 @@
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(3, 17);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(194, 753);
+            this.treeView1.Size = new System.Drawing.Size(194, 713);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -354,7 +354,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 773);
+            this.ClientSize = new System.Drawing.Size(1016, 733);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox3);

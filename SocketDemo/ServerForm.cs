@@ -24,7 +24,7 @@ namespace SocketDemo
         private string C_Port = "";//端口号
         bool _isrun = false;
         SystemInfo.SystemInfoSoapClient si = new SystemInfo.SystemInfoSoapClient();
-        NewOnlineService.OnLineDataServerInterfaceClient _online = new NewOnlineService.OnLineDataServerInterfaceClient();
+        //NewOnlineService.OnLineDataServerInterfaceClient _online = new NewOnlineService.OnLineDataServerInterfaceClient();
         private string C_AppName = "";
         private string C_SiteName = "";
 
@@ -806,29 +806,21 @@ namespace SocketDemo
         {
             try
             {
-                //int c = si.getEventCount(C_AppName);
-                //if (c > 0)
-                //{
-                //    string[] s = si.readEvent(C_AppName).ToArray();
-
-                //    foreach (string cs in s)
-                //    {
-                //        this.Invoke(new Action<string, bool>(ShowLog), cs, true);
-                //        SendMessage(cs);
-                //    }
-                //}
-
-                NewOnlineService.NullObj no = new NewOnlineService.NullObj();
-
-                string result = _online.GetEventInfo(C_AppName, no);
-                if (string.IsNullOrEmpty(result))
-                    return;
-                string[] s = result.Split('$');
-                foreach (string cs in s)
+                using (NewOnlineService.OnLineDataServerInterfaceClient tmpclient = new NewOnlineService.OnLineDataServerInterfaceClient())
                 {
-                    this.Invoke(new Action<string, bool>(ShowLog), cs, true);
-                    SendMessage(cs);
+                    NewOnlineService.NullObj no = new NewOnlineService.NullObj();
+                    string result = string.Empty;
+                    result = tmpclient.GetEventInfo(C_AppName, no);
+                    if (string.IsNullOrEmpty(result))
+                        return;
+                    string[] s = result.Split('$');
+                    foreach (string cs in s)
+                    {
+                        this.Invoke(new Action<string, bool>(ShowLog), cs, true);
+                        SendMessage(cs);
+                    }
                 }
+                
             }
             catch(Exception ex)
             {
